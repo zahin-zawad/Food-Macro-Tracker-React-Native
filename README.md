@@ -1,56 +1,78 @@
-# Welcome to your Expo app 👋
+# Food Macro Tracker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Food Macro Tracker is a simple Expo-based mobile app for logging meals and tracking daily nutrition goals. It helps you quickly record calories, protein, carbs, and fat, then review your recent meals from the home screen.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Add meals with calories and macronutrients
+- View a daily macro summary on the home screen
+- Review recent meals and delete entries
+- Copy or share a daily summary
+- Optional meal reminders (on supported devices)
+- Local persistence using AsyncStorage
 
+## Requirements
+
+- Node.js 18+
+- npm or yarn
+- Expo CLI
+- Android Studio / Xcode (optional, for running on emulators/simulators)
+
+## Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/zahin-zawad/Food-Macro-Tracker-React-Native.git
+   cd food-macro-tracker
+   ```
+
+2. Install dependencies
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. If you run into icon-related errors, install the icon package:
    ```bash
-   npx expo start
+   npx expo install @expo/vector-icons
    ```
 
-In the output, you'll find options to open the app in a
+## Running the app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Start the Expo development server:
 
 ```bash
-npm run reset-project
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Then choose one of the following:
+- Press `i` to open the iOS simulator
+- Press `a` to open the Android emulator
+- Scan the QR code in Expo Go on your phone
+- Press `w` to open the web version
 
-### Other setup steps
+## How to use it
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+1. Open the app on your device or emulator.
+2. On the home screen, you will see your daily macro summary and recent meals.
+3. Tap the add-meal tab to log a new meal.
+4. Enter the meal name and nutrition values, then tap Add Meal.
+5. Your meal will appear in the recent list and contribute to the summary.
+6. Use the share button to send a daily summary, or enable meal reminders from the home screen.
 
-## Learn more
+## Project structure
 
-To learn more about developing your project with Expo, look at the following resources:
+- `src/app` - Expo Router screens and tab navigation
+- `src/components` - Reusable UI components
+- `src/storage` - Local meal storage using AsyncStorage
+- `src/styles` - Shared styling and theme values
+- `src/utils` - Notification helpers
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Notes
 
-## Join the community
+- Meal data is stored locally on the device, so it will persist between app launches.
+- Reminder permissions may be required before enabling notifications.
+- For a clean reload after changing app configuration, you can run:
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npx expo start --clear
+```
